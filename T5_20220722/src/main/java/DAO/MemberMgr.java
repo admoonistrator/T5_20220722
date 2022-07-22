@@ -8,6 +8,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import Beans.MemberBean;
+
 public class MemberMgr {
 	
 	Connection con;
@@ -49,4 +51,31 @@ public class MemberMgr {
 		return pw;
 	}
 
+	public MemberBean getOne(String id) {
+		MemberBean mbean = new MemberBean();
+		try {
+			getCon();
+			
+			sql = "select id, name, gender, birth, address, hobby from member where id = ?";
+			PreparedStatement pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			ResultSet rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				mbean.setId(rs.getString(1));
+				mbean.setName(rs.getString(2));
+				mbean.setGender(rs.getString(3));
+				mbean.setBirth(rs.getString(4));
+				mbean.setAddress(rs.getString(5));
+				mbean.setHobby(rs.getString(6));
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return mbean;
+	}
+
+		
+	
 }
