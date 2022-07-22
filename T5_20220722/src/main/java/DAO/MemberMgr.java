@@ -76,6 +76,30 @@ public class MemberMgr {
 		return mbean;
 	}
 
+	public int idcheck(String id) {
+		int cnt=0;
 		
+		try {
+			getCon();
+			
+			sql="select count(*) from member where id=?";
+			PreparedStatement idchk=con.prepareStatement(sql);
+			idchk.setString(1, id);
+			ResultSet getcnt=idchk.executeQuery();
+			if(getcnt.next()) {
+				cnt=getcnt.getInt(1);
+			}
+			getcnt.close();
+			idchk.close();
+			con.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("error idcheck");
+		}
+				
+		return cnt;
+	}
+
 	
 }

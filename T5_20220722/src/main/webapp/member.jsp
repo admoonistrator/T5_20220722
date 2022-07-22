@@ -5,21 +5,17 @@
 <html>
 
 <head>
-
+<script type="text/javascript" src="script.js"></script>
 <title>Member</title>
-
+<link href="css.css" rel="stylesheet" type="text/css">
 </head>
 <!-- 회원정보 입력 폼 -->
-<!-- id 중복확인 버튼 : 새로운창 뜨면서 처리-->
-<!-- 우편번호 검색 버튼 : 새로운창 검색 , 동이름 입력 검색버튼 누르면 검색 결과 뜬ㄷ다 -->
-<!-- 다시쓰기 버튼 -->
-<!-- 회원가입 버튼 memberProc.jsp가 진행되고 회원가입되었다 메시지장 후 login.jsp 이동-->
 <!-- 시작파일 -->
 <!--  -->
 
 <body>
 	<div align="center">
-		<form name="regFrm" method="post" action="">
+		<form name="regFrm" method="post" action="memberProc.jsp">
 						<table>
 							<tr>
 								<td align="center" colspan="2" ><h2>회원 가입</h2></td>
@@ -27,7 +23,8 @@
 							<tr id="n">
 								<td width="120px">아이디 <span id="star">* </span></td>
 								<td width="400px"><input name="id" size="40">
-								 <input type="button" value="ID중복확인" onclick=""></td>
+								<!-- id 중복확인 버튼 : 새로운창 뜨면서 처리-->
+								 <input type="button" value="ID중복확인" onclick="idcheck()"></td>
 							</tr>
 							<tr id="n">
 								<td>비밀번호 <span id="star">* </span></td>
@@ -49,7 +46,8 @@
 							</tr>
 							<tr id="n">
 								<td>생년월일 <span id="star">* </span> </td>
-								<td><input name="birth" size="25"></td>
+								<td><input name="birth" size="25">&nbsp;&nbsp;&nbsp;&nbsp;ex)900323
+								</td>
 							</tr>
 							<tr id="n">
 								<td>Email <span id="star">* </span> </td>
@@ -58,7 +56,8 @@
 							<tr id="n">
 								<td>우편번호</td>
 								<td><input name="zipcode" id = "zipcode" size="20" readonly> 
-								<input type="button" value="우편번호 찾기" onClick=""></td>
+								<!-- 우편번호 검색 버튼 : 새로운창 검색 , 동이름 입력 검색버튼 누르면 검색 결과 뜬다 -->
+								<input type="button" value="우편번호 찾기" onClick="zipSearch()"></td>
 							</tr>
 							<tr id="n">
 								<td>주소</td>
@@ -92,7 +91,10 @@
 							</tr>
 							<tr id="n">
 								<td colspan="2" align="right">
-								<input type="submit" value="회원가입" onclick=" 
+								<!-- 필수항목 null 값인지 확인 -->
+								<!-- 회원가입 버튼 memberProc.jsp가 진행되고 회원가입되었다 메시지장 후 login.jsp 이동-->
+								<input type="submit" value="회원가입" onclick="return inputCheck()"> 
+								<!-- 다시쓰기 버튼 -->
 								<input type="reset" value="다시쓰기"> </td>
 							</tr>
 						</table>
