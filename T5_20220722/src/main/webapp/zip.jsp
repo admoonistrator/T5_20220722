@@ -11,7 +11,7 @@
 <!-- 우편번호와 주소검색결과 -->
 <!--  -->
 <body>
-    <form name="zipFrm" action = "">
+    <form name="zipFrm" action = "zipproc.jsp">
 
     
     	<table>

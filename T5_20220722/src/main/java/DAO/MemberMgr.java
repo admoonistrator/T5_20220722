@@ -101,5 +101,31 @@ public class MemberMgr {
 		return cnt;
 	}
 
-	
+	public void memberjoin(MemberBean b) {
+		try {
+			getCon();
+			
+			sql="insert into member values(?,?,?,?,?,?,?,?,?,?)";
+			PreparedStatement join=con.prepareStatement(sql);
+			join.setString(1, b.getId());
+			join.setString(2, b.getPwd());
+			join.setString(3, b.getName());
+			join.setString(4, b.getGender());
+			join.setString(5, b.getEmail());
+			join.setString(6, b.getBirth());
+			join.setString(7, b.getZipcode());
+			join.setString(8, b.getAddress());
+			join.setString(9, b.getHobby());
+			join.setString(10, b.getJob());
+			join.executeUpdate();
+			
+			join.close();
+			con.close();
+
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("error memberjoin");
+		}
+	}
+
 }
