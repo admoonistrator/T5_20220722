@@ -2,5 +2,6 @@ package Beans;
 
 public class MemberBean {
 	
-	private
+	//private 변수
+	//get,set
 }

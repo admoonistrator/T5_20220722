@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>로그아웃</title>
 </head>
+	<!-- 로그아웃 강제로 login.jsp로 이동 -->
 <body>
 
 </body>

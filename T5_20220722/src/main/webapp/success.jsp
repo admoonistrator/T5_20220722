@@ -7,6 +7,7 @@
 <title>Success</title>
 
 </head>
+<!-- 로그인 성공시 해당 클라이언트 정보보옂기 -->
 <body>
 
 <div align="center">

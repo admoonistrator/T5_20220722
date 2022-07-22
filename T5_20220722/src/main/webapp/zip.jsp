@@ -3,11 +3,13 @@
 <%@page import="DAO.MemberMgr"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- 동이름검색폼 우편번호와 주소검색결과 -->
 <html>
 <head>
 <title>Zip</title>
 </head>
+<!-- 동이름,검색입력폼 -->
+<!-- 우편번호와 주소검색결과 -->
+<!--  -->
 <body>
     <form name="zipFrm" action = "">
 
