@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+body {
+		FONT-SIZE: 10pt; 
+		COLOR: black; 
+		LINE-HEIGHT: 160%; 
+		FONT-FAMILY: Arial, Helvetica, sans-serif;
+		
+}
+
+table {
+		background-color: aliceblue;
+		border : 1px solid cornflowerblue;
+		padding : 10px;
+}
+
+#member{
+	font-weight: bold;
+	}
+
+input {
+	FONT-SIZE: 9pt;
+}
+
+#star {
+	color: hotpink;
+}
+
+#n {
+	text-indent:10px;
+}
